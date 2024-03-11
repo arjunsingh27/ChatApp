@@ -1,15 +1,16 @@
- 
-import './App.css'
+import Home from './pages/home/Home.jsx';
+import './App.css'; 
+// import Login from './pages/login/Login.jsx';
+// import SignUp from './pages/signup/SignUp.jsx';
 
-function App() {
- 
-
+const App = () => {
   return (
-    <>
-      Hello World india is great contry 
-      <div className="bg-slate-100 text-sm flex "></div>
-    </>
-  )
-}
+    <div className='p-4 h-screen flex items-center justify-center '>
+    <Home/>
+    {/* <Login/> */}
+    {/* <SignUp/> */}
+    </div>
+  );
+};
 
-export default App
+export default App;
