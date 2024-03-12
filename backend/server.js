@@ -3,6 +3,7 @@ import express from "express";
 import bodyparser from "body-parser";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 //Routes Import 
 import authRoutes from "./routes/auth.routes.js";
@@ -16,6 +17,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 const app = express();
 app.use(bodyparser.json());
 app.use(cookieParser());
+app.use(cors());
 dotenv.config();
 const port = process.env.PORT || 4000;
 
