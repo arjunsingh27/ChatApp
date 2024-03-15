@@ -26,7 +26,7 @@ const useSignup = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:4002/api/auth/signup", {
+      const response = await axios.post("/api/auth/signup", {
         fullName,
         username,
         password,

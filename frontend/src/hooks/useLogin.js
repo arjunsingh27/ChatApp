@@ -9,9 +9,7 @@ const useLogin = () => {
 
     const login = async ({ username, password }) => {
         try {
-            const res = await axios.post("http://localhost:4002/api/auth/login", { username, password }); // Added await
-            console.log(res);
-            
+            const res = await axios.post("/api/auth/login", { username, password }); // Added await
             localStorage.setItem("chat-user", JSON.stringify(res.data)); // Added JSON.stringify
             setAuthUser(res.data);
 

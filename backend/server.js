@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 //auth routes
 app.use("/api/auth", authRoutes);
 app.use("/api/messages",messageRoutes);
-app.use("/api/user",userRoutes);
+app.use("/api/users",userRoutes);
 
 //Server Listening on Port
 app.listen(port, () => {
