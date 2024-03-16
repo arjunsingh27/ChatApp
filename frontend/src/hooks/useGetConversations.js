@@ -11,8 +11,9 @@ const useGetConversations = () => {
                 setLoading(true);
                 // const user = await localStorage.getItem("chat-user");
                 const res = await axios.get("/api/users");
-                console.log(res.data);
+              
                 setConversations(res.data);
+                console.log(conversations);
             } catch (err) {
                 console.log(err);
             } finally {
