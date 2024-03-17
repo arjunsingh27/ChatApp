@@ -3,6 +3,7 @@ import Message from "../models/message.model.js";
 export const sendMesssage = async (req, res) => {
   try {
     const { message } = req.body;
+    console.log(message);
     const { id: receiverId } = req.params;
     const senderId = req.user._id;
 

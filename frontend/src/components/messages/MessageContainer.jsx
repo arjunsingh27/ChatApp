@@ -4,8 +4,11 @@ import MessageInput from "./MessageInput";
 import Messages from "./Messages";
 import { TiMessages } from "react-icons/ti";
 import { useAuthContext } from "../../context/AuthContext";
+import useGetMessages from "../../hooks/useGetMessages";
 
 const MessageContainer = () => {
+	const {messages,loading} = useGetMessages();
+	console.log("messages",messages);
 	const { selectedConversation, setSelectedConversation } = useConversation();
 
 	useEffect(() => {
