@@ -18,7 +18,7 @@ export const SocketContextProvider = ({ children }) => {
         const initializeSocket = async () => {
             if (authUser) {
                 console.log("Auth user is present", authUser._id);
-                const socket = await io("http://localhost:4002/", {
+                const socket = await io("https://chatapp-f2w1.onrender.com", {
                     query: {
                         userId: authUser._id,
                     },
