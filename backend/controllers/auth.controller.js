@@ -7,7 +7,7 @@ import generateTokenAndSetCookie from "../utils/generateToken.js";
 export const signup = async (req, res) => {
 	try {
 		const { fullName, username, password, confirmPassword, gender } = req.body;
-		console.log(gender);
+		// console.log(gender);
 
 		if (password !== confirmPassword) {
 			return res.status(400).json({ error: "Passwords don't match" });
@@ -60,14 +60,14 @@ export const login = async (req, res) => {
 	console.log("Login controller");
 	try {
 		const { username, password } = req.body;
-		console.log("Username and password", username, password);
+		// console.log("Username and password", username, password);
 		const user = await User.findOne({ username });
 		const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
 
 		if (!user || !isPasswordCorrect) {
 			return res.status(400).json({ error: "Invalid username or password" });
 		}
-		console.log("User in login controller", username);
+		// console.log("User in login controller", username);
 
 		generateTokenAndSetCookie(user._id, res);
 		
